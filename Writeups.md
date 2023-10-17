@@ -93,3 +93,18 @@ So I tried it and sure enough, the correct file was the only one displayed.
 
 z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 ## Level 7
+
+For this level there was a file name and the word next to it.
+on using ls, there was only one file, data.txt.
+When I tried to see the contents, it just kept going. So obviusly, I had to find the word millionth from data.txt
+
+<img width="242" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/71d16723-ab84-45be-8a58-16902a54eb82">
+
+I quickly went through the man page for grep. I looked for examples, but there was only one which was a little complicated for me. So I just googled the syntax for basic grep command. Et voila, there was the word and the password next to it.
+This one took lesser time than the previous 2 levels. 
+I learned how to look for a word in a particular file in this level.
+
+<img width="361" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/1f3e4a13-8adf-4ff8-95e5-57fd881c4456">
+
+TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+## Level 8
