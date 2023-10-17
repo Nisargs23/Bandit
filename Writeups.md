@@ -52,3 +52,44 @@ I learned that it would work if I used ./ before the *. So it finally worked. Th
 
 lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 ## Level 5
+
+Similar to the last level there is an inhere directory which i accessed. There were just a bunch of other directories. I tried using the find ./* thing like the last level but it gave a lot of files. 
+
+<img width="929" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9cee9c76-4a99-45a0-a533-c1e1c7a071bf">
+<img width="245" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/f919464a-6fd0-4367-b7a2-beb4da20ecab">
+
+
+So now I searched the man page for find. I found a readable command. It worked but too many files. 
+
+Then I found the size command on the same page. Took me a while to figure out the syntax of the size parameter. I had to make a few google searches but I got it. The c went after the 1033. This worked too but too many files again.
+Now there was an executable command but I couldn't find anything about not executable. So back to google. I found the \! prefix on some website and it seemed to work. 
+
+<img width="299" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/794b4c0b-1205-4ff7-a451-d8b2c2cb69be">
+
+
+Now the problem was that the parameters I was setting seemed to work but that wasn't narrowing down anything. It was only when I saw one of the examples on the man page that I realised that all of them work together. In hindsight that made sense as you would need to set different parameters to find a file.Anyways it worked after a while.
+
+<img width="491" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9c84295c-f2fa-4eb8-992f-399589d03cc2">
+
+P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+## Level 6
+Some new parameters and the size one is already known. It was easy enough to finf=d the user and group commands on the man page for find. They had pretty simple syntaxes.
+
+Honestly, I thought "that was pretty quick". Until I used the command. No result. Oh yeah, I didn't change the directory.
+So ls. Only this time no directory. ls -a . Still no directory, but some names which made no sense and gave a bunch of gibberish on trying to access it. 
+So I read the question again, and it said the whole server.
+On searching on google, I learned that for a specific directory, you can just use find /directory instead of shifting to the directory first. This was of no use for this particular level though as the file wasn't in any diretory. And simply specifying the canditions without any directory didn't seem to work. So something was missing
+
+It had to be find / instead of just find.
+
+<img width="624" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/76bd9fdf-1eec-4467-9819-27040a4782d7">
+
+Well it worked. Kind of. There were a whole bunch of permission denied. One of the files stood out on closer inspection but that didn't seem like a very efficient way to find the file. So I googled the question. It led me to a command 2>/dev/null.
+This made absolutely no sense. So I tried to find something else that I might unserstand but I found only this to hide the denied permissions. 
+So I tried it and sure enough, the correct file was the only one displayed.
+
+<img width="544" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/4025ad5c-d2e9-4f7b-9d21-23af39f7aef6">
+
+z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+## Level 7
