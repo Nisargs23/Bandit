@@ -108,3 +108,41 @@ I learned how to look for a word in a particular file in this level.
 
 TESKZC0XvTetK0S9xNwm25STk5iWrBvP
 ## Level 8
+
+In this level , the password was in the line that appeared only once. In the 'commands you may need' section, I saw uniq which seemed like an obvious choice.
+I used uniq but it pretty much gave the same text again. The man page said that it only filters adjacent matching lines so I would have to sort this too. The sort command worked. I confirmed with a google search that uniq is usually used with sort.
+
+<img width="239" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/7b754e06-4476-4468-853e-3dd0e94896fb">
+
+Now how would both of them work together? I googled and there were these commands with '|'. Then I read that piping and redirection page from helpful reading material. 
+
+I learned that > is used to send data to a particular file. This made 2>/dev/null a little bit easier to understand. I also learned what piping is. It is basically sending data after a command is performed to another command.
+Now back to the problem at hand, I tried the few variations of uniq like -c. Without sorting there were a lot of lines that occurred only once but that was because they weren't adjacent. 
+
+<img width="302" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/b0fbe505-093f-4ff7-ae44-5511772ee95b">
+
+So after sorting the lines, when I used uniq -c, there was only one line that occurred only once.
+
+<img width="314" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/98597891-930b-4df5-9e42-d1a96e9cbcac">
+
+This was the password
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+
+## Level 9
+
+This one said human readable. So I thought, I've already done this. Then I realised this one had human readble strings and not files. Though I new it would be useless, I saw the contents of data.txt. All gibberish as expected.
+
+So I saw the 'commands you may need' and saw strings. I checked the man page for strings. It said shows the printable files, seemed good enough. So I tried it. 
+
+<img width="254" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/06f23cfd-f62b-41ea-b2d8-a5338cac9072">
+
+On scrolling through the output, I saw a few lines with multiple '=' signs but that wasn't an efficient way to find the password.
+Now how many does several mean? I thought 4 seems reasonable.
+So I just used strings and piped it into grep with 4 equal to signs.
+
+<img width="364" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/a3f37e39-6348-4990-84f8-232177280e06">
+
+That did it. Got the password. This one was easier than I anticipated.
+So this level taught me about the strings command.
+
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
