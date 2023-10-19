@@ -1,6 +1,6 @@
 # Writeups
 ## Level 0
-I started with overthewire bandit feeling a little clueless but it got easier to understand pretty soon
+I started with overthewire bandit feeling a little clueless but it got easier to understand pretty soon.
 Level 0 was useful to understand the usage of the ssh command which provides communication over a network.
 <img width="578" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/6a16ca6a-245b-4491-8023-4ba8db48af9a">
 
@@ -10,26 +10,28 @@ Level 0 was pretty straightforward as you had already shown us the basics.
 
 Then I used the ls and cat commands to access the file and read it.
 ## Level 1
-The next task was to open a file called -. Of course I tried to simply open the file using cat but it didn'y work.Nothing happened infact. It didn't even give an error or anything.
+The next task was to open a file called '-'. 
+
+Of course I tried to simply open the file using cat but it didn't work.Nothing happened infact. It didn't even give an error or anything.
 It wasn't too difficult to solve though. A simple google search and the links provided on the level 1 page offered the solution.
 I learned that the - character is used before entering commands and hence a command is expected further. To get around this issue we need to use ./ before the filename.
 
 <img width="267" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/13e66453-1f17-49cd-a174-deb9690a1a16">
 
 ## Level 2
-Using the password in level 1 i went on to the next level. There was a file called spaces in this filename.
+Using the password in level 1 I went on to the next level. There was a file called spaces in this filename.
 I went through few of the man pages and read about the cd command. And as the question specifically mentioned home directory, I tried to use the cd command. That didn't work though. I went through the helpful reading material thing and it gave the solution. 
 Though I think I should have guessed the issue by looking at the filename.
-Anyways the spaces were the issue and I found that it was treating all the words as different names instead of a whole filename. I culd access the file by putting the filename in double quotes. Another thing that can be done is using the \ before each character.
+Anyways the spaces were the issue and I found that it was treating all the words as different names instead of a whole filename. I could access the file by putting the filename in double quotes. Another thing that can be done is using the \ before each character.
 
 <img width="386" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/905510a9-9663-4c2b-a8f0-58b0b73eff2e">
 
 ## Level 3
-Now i logged in again and used ls to see inhere written in blue. As the question said inhere directory I assumed it was a directory and used the cd command. This got me into the directory. Then I used ls again but there was no result.
+Now I logged in again and used ls to see inhere written in blue. As the question said inhere directory I assumed it was a directory and used the cd command. This got me into the directory. Then I used ls again but there was no result.
 Now as the question said hidden file, I made a google search on how to see hidden files in a directory. The first result said that to see the hidden files we can use -a after the ls command. 
 This enables all the files to be seen. 
-It worked and i saw the .hidden file. It was accessible by using cat.
-So in this level i learved to access a directory and also see files that are hidden. 
+It worked and I saw the .hidden file. It was accessible by using cat.
+So in this level i learned to access a directory and also see files that are hidden. 
 I also googled how to exit an entered directory incase i needed to go back out. I found I can simply use cd.
 
 <img width="295" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/78418825-61c8-4d0d-9948-534a61b611f1">
@@ -38,7 +40,7 @@ I also googled how to exit an entered directory incase i needed to go back out. 
 This level took me quite some time.
 I logged in and did the usual stuff. ls and cd command to get into the directory. There were a bunch of files and i tried opening one of them.
 It had gibberish in it. Well at least gibberish to me. So i guess that's what human unreadable means.
-I used the man page for file as it said that file command can determine the file type.
+I used the man page for 'file' as it said that file command can determine the file type.
 There were several variations for the file command and I tried quite a few of them but they all pretty much gave the same output. And the different ones didn't make sense.
 
 <img width="606" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/ac2a2d3e-ecbf-4e50-bf28-929a00f656e9">
@@ -67,19 +69,19 @@ Now there was an executable command but I couldn't find anything about not execu
 <img width="299" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/794b4c0b-1205-4ff7-a451-d8b2c2cb69be">
 
 
-Now the problem was that the parameters I was setting seemed to work but that wasn't narrowing down anything. It was only when I saw one of the examples on the man page that I realised that all of them work together. In hindsight that made sense as you would need to set different parameters to find a file.Anyways it worked after a while.
+Now the problem was that the parameters I was setting seemed to work but that wasn't narrowing down anything. It was only when I saw one of the examples on the man page that I realised that all of them work together. In hindsight that made sense as you would need to set different parameters to find a file. Anyways it worked after a while.
 
 <img width="491" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9c84295c-f2fa-4eb8-992f-399589d03cc2">
 
 P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
 
 ## Level 6
-Some new parameters and the size one is already known. It was easy enough to finf=d the user and group commands on the man page for find. They had pretty simple syntaxes.
+Some new parameters in this level, and the size one is already known. It was easy enough to find the user and group commands on the man page for find. They had pretty simple syntaxes.
 
 Honestly, I thought "that was pretty quick". Until I used the command. No result. Oh yeah, I didn't change the directory.
-So ls. Only this time no directory. ls -a . Still no directory, but some names which made no sense and gave a bunch of gibberish on trying to access it. 
+So ls. Only this time no directory. ls -a . Still no directory, but there were some names which made no sense and gave a bunch of gibberish on trying to access it. 
 So I read the question again, and it said the whole server.
-On searching on google, I learned that for a specific directory, you can just use find /directory instead of shifting to the directory first. This was of no use for this particular level though as the file wasn't in any diretory. And simply specifying the canditions without any directory didn't seem to work. So something was missing
+On searching on google, I learned that for a specific directory, you can just use find /directory instead of shifting to the directory first. This was of no use for this particular level though as the file wasn't in any diretory. And simply specifying the conditions without any directory didn't seem to work. So something was missing.
 
 It had to be find / instead of just find.
 
@@ -95,12 +97,12 @@ z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 ## Level 7
 
 For this level there was a file name and the word next to it.
-on using ls, there was only one file, data.txt.
-When I tried to see the contents, it just kept going. So obviusly, I had to find the word millionth from data.txt
+On using ls, there was only one file, data.txt.
+When I tried to see the contents, it just kept going. So obviusly, I had to find the word 'millionth' from data.txt
 
 <img width="242" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/71d16723-ab84-45be-8a58-16902a54eb82">
 
-I quickly went through the man page for grep. I looked for examples, but there was only one which was a little complicated for me. So I just googled the syntax for basic grep command. Et voila, there was the word and the password next to it.
+I quickly went through the man page for grep. I looked for examples, but there was only one example, which was a little complicated for me. So I just googled the syntax for a basic grep command. Et voila, there was the word and the password next to it.
 This one took lesser time than the previous 2 levels. 
 I learned how to look for a word in a particular file in this level.
 
@@ -125,12 +127,13 @@ So after sorting the lines, when I used uniq -c, there was only one line that oc
 
 <img width="314" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/98597891-930b-4df5-9e42-d1a96e9cbcac">
 
-This was the password
+This was the password.
+There were quite a few things to be learned in this level like uniq, sort , piping and redirection.
 EN632PlfYiZbn3PhVK3XOGSlNInNE00t
 
 ## Level 9
 
-This one said human readable. So I thought, I've already done this. Then I realised this one had human readble strings and not files. Though I new it would be useless, I saw the contents of data.txt. All gibberish as expected.
+This one said human readable. So I thought, I've already done this. Then I realised this one had human readable strings and not files. Though I new it would be useless, I saw the contents of data.txt. All gibberish as expected.
 
 So I saw the 'commands you may need' and saw strings. I checked the man page for strings. It said shows the printable files, seemed good enough. So I tried it. 
 
@@ -146,3 +149,30 @@ That did it. Got the password. This one was easier than I anticipated.
 So this level taught me about the strings command.
 
 G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+
+## Level 10 
+
+The next password was in data.txt but encoded in base64. I looked up the man page for base64 and it said it encodes or decodes data. I read a bit about it. I learned that it uses a base64 specific coding format to encode binary strings to text and vice versa.
+The man page said -d is used for decoding.
+
+So first i just printed the contents of data.txt to have a look and then used base64 with -d. It worked on the first time. I didn't even look up any examples for this one. This level was pretty quick to finish. 
+
+<img width="556" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/e608ae0d-4d00-4ed0-b11c-47968517fe76">
+
+Something new to learn in every level though.
+
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+## Level 11
+
+The next file had the text rotated by 13. Didn't make much sense initially so I looked up the linked wikipedia page.
+It's pretty straightforward. Just replacing the alphabets by the 13th alphabet after it. Then there was even an example on the wikipedia page for using tr for rot13 in unix. Nevertheless I looked up the man page for tr, but wikipedia explained it pretty well. The example in wikipedia had used text directly , while I had to use data.txt. The syntax for tr didn't have anything argument after the encoding key thing but I tried it anyways. 
+
+When that didn't work I used cat and piped the tr command. That was it. It worked.
+
+<img width="447" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/2739d4fd-56f1-4c23-879d-20f64660aedb">
+
+Even this one didn't take as much time as the few middle levels.
+
+
+It was a fun and informative experience doing these 11 levels. It doesn't seem like much because I did these over a span of 4 days but when I looked through all the things I learned over the levels, it sums up to some significance. It was a great experience overall.
