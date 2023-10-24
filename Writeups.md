@@ -176,3 +176,41 @@ Even this one didn't take as much time as the few middle levels.
 
 
 It was a fun and informative experience doing these 11 levels. It doesn't seem like much because I did these over a span of 4 days but when I looked through all the things I learned over the levels, it sums up to some significance. It was a great experience overall.
+
+## Level 12
+
+This level was something else. I haven't spent so much time on any level before this one. I had to go through like 6 or 7 man pages to fully understand the stuff here.
+
+First of all I looked up the wikipedia page on hexdump and it's basically the hexadecimal form of any data but in a specific format.
+The question had some guidelines so first I checked the man page for mkdir which was pretty easy to understand.
+I made the directory , then copied the file into the directory after checking the man page for cp.
+Then I saw the xxd command and learned that xxd -r reverses the hex dump to its original text. Well it didn't work initially. I found that the reversed text had to be stored in another file. I thought that was it, that I'd now see the reversed text. I forgot about the repeatedly compressed part.
+
+Then I checked the file type and read the man pages for gzip and bzip2 which was pretty straightforward too.
+After this I tried to extract the files from the gzip. 
+
+<img width="947" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/5fd0b9fb-eb2f-43f6-98ca-197e84487481">
+
+It clearly did nothing. It took me a very long time to figure out about the file extensions and that I would have to change the file extension using mv every time. Eventually, it worked. Well I didn't realise it worked until I saw the file type.
+
+<img width="950" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/38e2a338-7508-4e3b-b8dc-f07bc93e8405">
+
+Then the file was in bzip2 format then gzip again and then it said posix tar archive. 
+
+<img width="946" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/fca4b790-7532-4e25-b2d8-6ad7d5d7c75d">
+
+So now I looked up the man page for tar. I learned that it is used to create and extract archive files. I saw a few examples for it. A google search told me that tar -xf is used to extract tar files. 
+
+<img width="443" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/1bcfe1a2-ffd8-4838-b906-664e2a6f3a37">
+
+I used the tar command. I realised that the data was no longer in the info file. I mean in gzip and bzip2, the same file was being decompressed. Over here, the data from info was extracted to another file. 
+Then I got a hang of it and had to do the decompressing and extracting a few times before I got some ascii text.
+
+<img width="941" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/c6bd7b04-291b-41f2-b940-d368b3f775d2">
+
+Got the password finally.
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+## Level 13
+For this level, first I read the helpful reading material. It was really informative and hade soe=me interesting things, but I didn't see anything that I could apply for this level.
+Then I read through every man page mentioned, still didn'y get any sense of directgion as to what I should do. When a few google searches didn't help, I had to turn to youtube for help.
