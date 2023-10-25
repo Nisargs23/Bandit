@@ -212,5 +212,36 @@ Got the password finally.
 wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 
 ## Level 13
-For this level, first I read the helpful reading material. It was really informative and hade soe=me interesting things, but I didn't see anything that I could apply for this level.
-Then I read through every man page mentioned, still didn'y get any sense of directgion as to what I should do. When a few google searches didn't help, I had to turn to youtube for help.
+For this level, first I read the helpful reading material. It was really informative and hade some interesting things, but I didn't see anything that I could apply for this level.
+Then I read through every man page mentioned, still didn'y get any sense of direction as to what I should do. When a few google searches didn't help, I had to turn to youtube for help.
+
+I learned that I had to use ssh -i along with @localhost.
+This didn't work though. I though there was something wrong with the configuration in my wsl. I spent a lot of time thinking localhost wasn't working on my machine. After some help, I realised that I was missing -p. I felt really stupid as I had spent a considerable amount of time looking at a completely different thing.
+
+Anyways, now I was logged in as bandit14, and I got the password.
+<img width="617" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/381f1014-2851-4730-8afa-0018944e597c">
+
+## Level 14
+
+This level requres us to enter a password into port 30000. I saw that video which explains how the internet works, and I read about ip addresses. Then I read the man page for netcat. nc would do the job for this level. I also learnes that unlike ssh nc doesn't require -p for the port. The syntax directly requires the port.
+
+<img width="365" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/6bf8508c-f998-454d-850c-590c7733038f">
+
+This rewuired two tries as I didn't realise the password was being read.
+
+## Level 15
+
+For this level, similar stuff had to be done but while using ssl encryption. I checked the man page for openssl and s_client. Didn't quite get what to do so I googled what to use for encrypting using ssl. There was this man page for s_client which had connect and the host and port name.
+Initially, I tried using s_client independently, I then learned that it is to be preceded by openssl.
+
+<img width="502" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/04f36441-24e9-4357-9f73-66c61134abb0">
+
+It gave a lot of stuff and there was read r block in that. So I read the connected commands thing and I don't know if I fully understood, but it said that without using -ign_eof it gives all the data raceived from the server. 
+
+So now I tried it with the -ign_eof. It still gave all that stuff. It didn't matter if I used -ign_eof or not, upon entering the password at the end, I got the next password. 
+Oh and just an observation, that unlike ssh the passwords are visible in this.
+
+<img width="389" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/eb76938b-2cee-494b-9f92-136f94cc8558">
+
+## Level 16
+
