@@ -223,11 +223,11 @@ Anyways, now I was logged in as bandit14, and I got the password.
 
 ## Level 14
 
-This level requres us to enter a password into port 30000. I saw that video which explains how the internet works, and I read about ip addresses. Then I read the man page for netcat. nc would do the job for this level. I also learnes that unlike ssh nc doesn't require -p for the port. The syntax directly requires the port.
+This level requres us to enter a password into port 30000. I saw that video which explains how the internet works, and I read about ip addresses. Then I read the man page for netcat. nc would do the job for this level. I also learned that unlike ssh nc doesn't require -p for the port. The syntax directly requires the port.
 
 <img width="365" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/6bf8508c-f998-454d-850c-590c7733038f">
 
-This rewuired two tries as I didn't realise the password was being read.
+This required two tries as I didn't realise the password was being read.
 
 ## Level 15
 
@@ -245,3 +245,44 @@ Oh and just an observation, that unlike ssh the passwords are visible in this.
 
 ## Level 16
 
+This level required scanning of the ports. I looked up the man page for nmap, finding the port ranges thing was easy enough but I couldn't see anything that would give me details about ssl. I googled it and there was this -sV which would scan for ssl too. I tried it but it took too long, so I just ended the command. It still gave an output. So 2 of the ports had ssl written beside them. -sV narrowed it down to 2 ports. Now I could just check both of them.
+
+<img width="950" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/ee1ef862-e678-4cd2-a87d-56772832b314">
+
+I found the right one, but it didn't give the password. It gave an rsa key.
+
+<img width="483" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/20615de0-a050-4dd7-8c65-521d6a2ab9f4">
+
+Now though I knew there was a very slim chance it would work, I just pasted the key next to ssh and tried to login. Of course it didn't work. I googled how to use an rsa key, I would have to store it in a file and change the permissions for that file too. This required the use of a text editor, and I saw vim at one or teo places. So I used that.
+
+<img width="596" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9932afb7-10df-4730-82b0-ec3bfb891900">
+
+I saved a file on my device with the rsa key and used it for logging in. It took 2 tries to save the file correctly using vim. Honestly, I had no idea how to use it, I was just following the steps. I was able to do it myself the second time though.
+
+## Level 17
+This one was easier than the previous few. Dealing with normal files again. Anyways, I looked up the man page for diff, and it was used to compare files line by line. There were a bunch of arguments for diff, but simply using it without any arguments also gave the desired output. 
+
+<img width="437" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/aad42128-48dc-4173-a9ac-e38cce693893">
+
+Then when I logged in using the password, it worked but I was logged out again. That was supposed to happen. I saw the byebye thing in the note.
+
+## Level 18
+
+In this level I am unable to login to bandit18 because the .bashrc file is modified to do so. This was stated in the question. 
+
+I googled this, and as per my crude understanding, as sson as ssh is used, there is a .bashrc file generated which is logging me out. To get around this, the -t argument can be used with ssh as it won't give a persistent connection, but will rather allow me to execute a command directly in the ssh statement itself, so no constant connection required. Before logging me out, the command will have run. 
+This was my perception of what is happening, I may be inaccurate.
+
+Anyways, that did it. Got the password
+
+<img width="632" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/75b45e40-08ca-4803-b5ae-5a24414e275b">
+
+Now this worked because I knew the file was in readme. I wouldn't be able to get the password if I didn't know the file name.
+
+I saw an alternative on a website, which used /bin/sh after the normal ssh command with -t. I tried it and it allowed me to login without and maintain the connection. 
+
+I have absolutely no idea how this works and what /bin/sh is. Apparently it forces the login. 
+
+<img width="612" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/47ebfdf6-6489-4354-8c0e-9347ac639318">
+
+## Level 19 
