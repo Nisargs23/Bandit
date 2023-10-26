@@ -213,17 +213,17 @@ wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
 
 ## Level 13
 For this level, first I read the helpful reading material. It was really informative and hade some interesting things, but I didn't see anything that I could apply for this level.
-Then I read through every man page mentioned, still didn'y get any sense of direction as to what I should do. When a few google searches didn't help, I had to turn to youtube for help.
+Then I read through every man page mentioned, still didn't get any sense of direction as to what I should do. When a few google searches didn't help, I had to turn to youtube for help.
 
 I learned that I had to use ssh -i along with @localhost.
-This didn't work though. I though there was something wrong with the configuration in my wsl. I spent a lot of time thinking localhost wasn't working on my machine. After some help, I realised that I was missing -p. I felt really stupid as I had spent a considerable amount of time looking at a completely different thing.
+This didn't work though. I thought there was something wrong with the configuration in my wsl. I spent a lot of time thinking localhost wasn't working on my machine. After some help, I realised that I was missing -p. I felt really stupid as I had spent a considerable amount of time looking at a completely different thing.
 
 Anyways, now I was logged in as bandit14, and I got the password.
 <img width="617" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/381f1014-2851-4730-8afa-0018944e597c">
 
 ## Level 14
 
-This level requres us to enter a password into port 30000. I saw that video which explains how the internet works, and I read about ip addresses. Then I read the man page for netcat. nc would do the job for this level. I also learned that unlike ssh nc doesn't require -p for the port. The syntax directly requires the port.
+This level requires us to enter a password into port 30000. I saw that video which explains how the internet works, and I read about ip addresses. Then I read the man page for netcat. nc would do the job for this level. I also learned that unlike ssh nc doesn't require -p for the port. The syntax directly requires the port.
 
 <img width="365" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/6bf8508c-f998-454d-850c-590c7733038f">
 
@@ -239,7 +239,7 @@ Initially, I tried using s_client independently, I then learned that it is to be
 It gave a lot of stuff and there was read r block in that. So I read the connected commands thing and I don't know if I fully understood, but it said that without using -ign_eof it gives all the data raceived from the server. 
 
 So now I tried it with the -ign_eof. It still gave all that stuff. It didn't matter if I used -ign_eof or not, upon entering the password at the end, I got the next password. 
-Oh and just an observation, that unlike ssh the passwords are visible in this.
+Oh and just an observation, unlike ssh the passwords are visible in this.
 
 <img width="389" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/eb76938b-2cee-494b-9f92-136f94cc8558">
 
@@ -253,7 +253,7 @@ I found the right one, but it didn't give the password. It gave an rsa key.
 
 <img width="483" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/20615de0-a050-4dd7-8c65-521d6a2ab9f4">
 
-Now though I knew there was a very slim chance it would work, I just pasted the key next to ssh and tried to login. Of course it didn't work. I googled how to use an rsa key, I would have to store it in a file and change the permissions for that file too. This required the use of a text editor, and I saw vim at one or teo places. So I used that.
+Now though I knew there was a very slim chance it would work, I just pasted the key next to ssh and tried to login. Of course it didn't work. I googled how to use an rsa key, I would have to store it in a file and change the permissions for that file too. This required the use of a text editor, and I saw vim at one or two places. So I used that.
 
 <img width="596" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9932afb7-10df-4730-82b0-ec3bfb891900">
 
@@ -270,8 +270,8 @@ Then when I logged in using the password, it worked but I was logged out again. 
 
 In this level I am unable to login to bandit18 because the .bashrc file is modified to do so. This was stated in the question. 
 
-I googled this, and as per my crude understanding, as sson as ssh is used, there is a .bashrc file generated which is logging me out. To get around this, the -t argument can be used with ssh as it won't give a persistent connection, but will rather allow me to execute a command directly in the ssh statement itself, so no constant connection required. Before logging me out, the command will have run. 
-This was my perception of what is happening, I may be inaccurate.
+I googled this, and as per my crude understanding, as soon as ssh is used, there is a .bashrc file generated which is logging me out. To get around this, the -t argument can be used with ssh as it won't give a persistent connection, but will rather allow me to execute a command directly in the ssh statement itself, so no constant connection required. Before logging me out, the command will have run. 
+This was my perception of what is happening, it may be inaccurate.
 
 Anyways, that did it. Got the password
 
@@ -279,10 +279,62 @@ Anyways, that did it. Got the password
 
 Now this worked because I knew the file was in readme. I wouldn't be able to get the password if I didn't know the file name.
 
-I saw an alternative on a website, which used /bin/sh after the normal ssh command with -t. I tried it and it allowed me to login without and maintain the connection. 
+I saw an alternative on a website, which used /bin/sh after the normal ssh command with -t. I tried it and it allowed me to login and maintain the connection. 
 
 I have absolutely no idea how this works and what /bin/sh is. Apparently it forces the login. 
 
 <img width="612" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/47ebfdf6-6489-4354-8c0e-9347ac639318">
 
 ## Level 19 
+
+In this level, I learned what setuid means. It is basically giving temporary access or permission to a particular user to perform a task. This access rests with another user.
+
+The file appeared red which I guess means that I don't currently have access to it.
+It was pretty straightforward getting the password. Though I couldn't access the directory.
+
+<img width="947" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/3258c9f6-ce19-4dcc-b565-350d2d7dd7b7">
+
+## Level 20
+
+I'm not gonna lie, when I saw the statement for this level I was a little lost. I read it like thrice but it didn't quite make sense. Especially the transmitting and reading part.
+
+Like every level, I went through the man pages bash, screen and tmux. This confused me more as none of it felt like it would help. I messed around with suconnect but apart from the line describing the function, it wasn't doing much. 
+I understood that I would have to connect to a port on localhost. So I used nmap to scan the ports. There were a few, but what was I supposed to do with that? After spending some more time and getting nowhere, I had no choice but to use youtube.
+
+From the video, I understood that there would be a port setup that would listen for a response, when something is entered into it, and suconnect would be used to intercept the input, check it and send the password back.
+
+First I messed around with nc -l which would be used to listen. I found that those ports I searched for were of no use, I would have to use a new one. The existing ones couldn't be used. In the video, there were two shells used. I used two to make it work, but after searching around for a bit, I learned that it could be done in one shell too. As this was already a little complicated for me, I stuck with two shells as I was starting to understand how it was working.
+
+So on one shell , a port was set up
+
+<img width="263" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/9cd40ff1-ee86-4eae-a7d3-0b25d276dc15">
+
+And on the other, the connection to the port was made.
+
+<img width="289" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/04fbbc76-9ca2-4894-bd46-81d8e562f06a">
+
+The old password was read and the new one sent back.
+
+There weren't many commands in this level, but it took me quite some time to understand what was going on. And I'm pretty sure my undertanding isn't that sound yet.
+
+## Level 21
+
+In this level, I understood what cron does. It basically schedules tasks to be performed. We can specify the date and time and the task to be performed using it.
+
+In this level, I accessed the files in /etc/cron.d. There were quite a few files.
+
+<img width="626" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/5242bfc5-ed8a-4b8a-b9e1-263b00125aa7">
+
+When I accessed the files individually, I was able to open some of them.I learned that .sh files are shell scripts for performing other tasks. 
+
+The question said, see what command is being executed. Now as per my newly found understanding, wouldn't all the .sh files be executed. So I guess the all the cron things with .sh files will be executed when they are scheduled to. Now to check what commands are being executed, I would have to see the contents of the .sh file.
+
+I could only open the bandit22 one. Which is a bit obvious as that's the next level. Should have realised sooner.
+
+<img width="502" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/c72ac651-6cd6-4a39-8fd1-360099ef839f">
+
+I don't know what the first line means but from my knowledge of the previous levels, chmod is basically changing permissions to access the file mentioned there. And then the password for logging into bandit22 is being transferred to that file.
+
+<img width="529" alt="image" src="https://github.com/Nisargs23/Bandit/assets/148000598/49024852-eee2-48b4-a0fa-f9eabab32206">
+
+I'm assuming the password stored in there will be required to login to the next level.
